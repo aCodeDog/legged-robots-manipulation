@@ -17,20 +17,23 @@ legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged 
 
 ```
    # Add those contents
+
+import os
 from legged_gym.envs.airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
 
 from legged_gym.envs.b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
 
 
+from legged_gym.utils.task_registry import task_registry
+
 from .airbot.airbot_robot import Airbot
 from .b2w.b2w_robot import B2w
+
 
 from .airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
 from .b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
 
 
-task_registry.register( "airbot", Airbot, AirbotRoughCfg(), AirbotRoughCfgPPO() )
-task_registry.register( "b2w", B2w, B2wRoughCfg(), B2wRoughCfgPPO() )
 ```
 
 2. Copy envs files into legged_gym/envs corresponding.

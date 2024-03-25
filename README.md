@@ -13,7 +13,7 @@ legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged 
 
 ### Copy required files to [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
 
-1. Copy the contents of ~/legged-robots-manipulation/legged_gym/legged_gym/envs/__init__.py into [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
+1. Copy the contents of ~/legged-robots-manipulation/legged_gym/envs/__init__.py into [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
 
 ```
    # Add those contents

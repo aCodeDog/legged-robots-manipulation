@@ -39,7 +39,7 @@ from .b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
 2. Copy envs files into legged_gym/envs corresponding.
 
 ```
-   # Add those contents
+   # Add those files
 cp path/to/legged-robots-manipulation/legged_gym/envs path/to/legged_gym/legged_gym/envs
 ```
 

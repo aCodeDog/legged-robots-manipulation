@@ -5,11 +5,11 @@ legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged 
 The current repository contains two types of airbot and b2w. The current repository is a partial implementation of the paper. The whole code will be released once the paper is accepted.
 ### airbot
 airbot is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
-
+![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/resources/pictures/airbot_demo.gif)
 
 ### b2w
 b2w is a locomotion demo for the Unitree b2w robot.
-
+![locomotion](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/resources/pictures/b2w_demo.gif)
 
 ## Installation
 

@@ -1,6 +1,13 @@
 # legged-robots-manipulation
 ## Introduction
-legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged robots. The code is built on  [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
+legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged robots. The code is built on  [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).We provide two pre-trained models for airbot and b2w.
+
+The current repository contains two types of airbot and b2w. The current repository is a partial implementation of the paper. The whole code will be released once the paper is accepted.
+### airbot
+airbot is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
+### b2w
+b2w is a locomotion demo for the Unitree b2w robot.
+
 
 ## Installation
 

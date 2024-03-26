@@ -133,7 +133,6 @@ class B2wRoughCfg( LeggedRobotCfg ):
             feet_stumble = -0.
             action_rate = -0.0002
             stand_still = -0.01
-            joint_pos = -2
             dof_pos_limits = -0.9
             arm_pos = -0.
             hip_action_l2 = -0.1
@@ -175,7 +174,7 @@ class B2wRoughCfgPPO( LeggedRobotCfgPPO ):
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
         experiment_name = 'b2w'
-        #resume = True
+        resume = True
         num_steps_per_env = 48 # per iteration
         max_iterations = 3000
         load_run = '/path/to/pretrained_model'

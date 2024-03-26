@@ -104,7 +104,6 @@ class AirbotRoughCfg( LeggedRobotCfg ):
             feet_stumble = -0.01
             action_rate = -0.001
             stand_still = -0.1
-            joint_pos = -0.1
             dof_pos_limits = -0.4
             arm_pos = -0.
             heading = -0.

@@ -64,3 +64,18 @@ python tran.py --task=b2w
 python train.py --task=airbot  
 
  ```
+
+## Citing
+
+If you use this work, please cite [this paper](https://arxiv.org/abs/2403.16535):
+
+```text
+      @misc{wang2024armconstrained,
+        title={Arm-Constrained Curriculum Learning for Loco-Manipulation of the Wheel-Legged Robot}, 
+        author={Zifan Wang, Yufei Jia, Lu Shi, Haoyu Wang, Haizhou Zhao, Xueyang Li, Jinni Zhou, Jun Ma and Guyue Zhou},
+        year={2024},
+        eprint={2403.16535},
+        archivePrefix={arXiv},
+        primaryClass={cs.RO}
+  }
+```

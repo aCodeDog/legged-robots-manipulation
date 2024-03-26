@@ -151,10 +151,9 @@ class Airbot(LeggedRobot):
         self.reset_idx(env_ids)
         self.compute_observations() # in some cases a simulation step might be required to refresh some obs (for example body positions)
         
-        #self.commands[:, :1] = self.set_commands[:, :1] * (self._cube_object_pos[:,:1] - self.root_states[:, :1])
         self.commands[:, :1] = (1 - torch.exp(-torch.square(self._cube_object_pos[:,:1] - self.root_states[:, :1]))) * self.set_commands[:, :1]
 
-        # torch.exp(-dis_err/self.cfg.rewards.object_sigma)
+     
         self.last_actions[:] = self.actions[:]
         self.last_dof_vel[:] = self.dof_vel[:]
         self.last_dof_pos[:] = self.dof_pos[:]

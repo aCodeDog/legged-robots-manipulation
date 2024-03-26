@@ -44,7 +44,8 @@ from .b2w.b2w_robot import B2w
 from .airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
 from .b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
 
-
+task_registry.register( "b2w", B2w, B2wRoughCfg(), B2wRoughCfgPPO() )
+task_registry.register( "airbot", Airbot, AirbotRoughCfg(), AirbotRoughCfgPPO() )
 ```
 
 2. Copy envs files into legged_gym/envs corresponding.

@@ -58,11 +58,11 @@ cp path/to/legged-robots-manipulation/legged_gym/envs path/to/legged_gym/legged_
 
 ## Train
 ```
-python tran.py --task=b2w 
+python tran.py --task=b2w --rl_device=cuda:0
 
 # or
 
-python train.py --task=airbot  
+python train.py --task=airbot  --rl_device=cuda:0 
 
  ```
 

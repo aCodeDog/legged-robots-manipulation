@@ -391,7 +391,7 @@ class Airbot(LeggedRobot):
 
         actions_scaled = actions * self.cfg.control.action_scale
         control_type = self.cfg.control.control_type
-
+        self.dof_vel[self.arm_indices] = 0
         if control_type=="P":
             if not self.cfg.domain_rand.randomize_motor:  # TODO add strength to gain directly
                 torques = self.p_gains*(actions_scaled - self.dof_err) - self.d_gains*self.dof_vel

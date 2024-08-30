@@ -69,3 +69,10 @@ If you use this work, please cite [this paper](https://arxiv.org/abs/2403.16535)
         primaryClass={cs.RO}
   }
 ```
+
+# Acknowledgements
+This code builds upon following open-source code-bases. Please visit the URLs to see the respective LICENSES:
+
+1. https://github.com/leggedrobotics/legged_gym/tree/master
+2. https://github.com/aCodeDog/awesome-loco-manipulation
+3. https://github.com/MarkFzp/Deep-Whole-Body-Control

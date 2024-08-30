@@ -6,7 +6,7 @@ legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged 
 
 The current repository contains airbot ,go2_arx,b2w_z1,aliengo_z1 and b2w. The current repository is a partial implementation of the paper.The repository is still under construction for various reasons, and will be releasing issac lab versions and vision-based versions in the near future.
 
-### Solar System Exploration, 1950s – 1960s
+### To do list
 
 - [x] legged-robots-manipulation for isaacgym 
 - [ ] legged-robots-manipulation for isaaclab

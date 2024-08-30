@@ -13,19 +13,18 @@ The current repository contains airbot ,go2_arx,b2w_z1,aliengo_z1 and b2w. The c
 - [ ] end2end vision-based loco-manipulation method
 
 ### airbot
-airbot is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
-![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/resources/pictures/airbot_demo.gif)
+
+![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/pictures/airbot_demo.gif)
 
 ### go2_arx
-go2_arx is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
 
+![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/pictures/go2_arx.gif)
 ### aliengo_Z1
-
+![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/pictures/aliengo_z1.gif)
 ### B2W_Z1
-
 ### b2w
 b2w is a locomotion demo for the Unitree b2w robot.
-![locomotion](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/resources/pictures/b2w_demo.gif)
+![locomotion](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/pictures/b2w_demo.gif)
 
 ## Installation
 
@@ -38,7 +37,7 @@ b2w is a locomotion demo for the Unitree b2w robot.
 
 ### install legged-robots-manipulation
 
-1. 
+
 ```
 cd loco_manipulation_gym
 pip install -e .

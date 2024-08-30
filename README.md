@@ -1,13 +1,27 @@
 # legged-robots-manipulation
 ## Introduction
-legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged robots. The code is built on  [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master). We provide two pre-trained models for airbot and b2w.
+legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged robots. The code is built on  [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master). 
 
 *Project Page*:[wheel-legged-loco-manipulation](https://acodedog.github.io/wheel-legged-loco-manipulation/)
 
-The current repository contains airbot and b2w. The current repository is a partial implementation of the paper. The whole code will be released once the paper is accepted.
+The current repository contains airbot ,go2_arx,b2w_z1,aliengo_z1 and b2w. The current repository is a partial implementation of the paper.The repository is still under construction for various reasons, and will be releasing issac lab versions and vision-based versions in the near future.
+
+### Solar System Exploration, 1950s – 1960s
+
+- [x] legged-robots-manipulation for isaacgym 
+- [ ] legged-robots-manipulation for isaaclab
+- [ ] end2end vision-based loco-manipulation method
+
 ### airbot
 airbot is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
 ![loco-manipulation](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/resources/pictures/airbot_demo.gif)
+
+### go2_arx
+go2_arx is a loco-manipulation task implemented using PPO. It is the baseline for comparison in the Paper.
+
+### aliengo_Z1
+
+### B2W_Z1
 
 ### b2w
 b2w is a locomotion demo for the Unitree b2w robot.
@@ -22,37 +36,13 @@ b2w is a locomotion demo for the Unitree b2w robot.
 
 
 
-### Copy required files to [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
+### install legged-robots-manipulation
 
-1. Copy the contents of ~/legged-robots-manipulation/legged_gym/envs/__init__.py into [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master).
-
+1. 
 ```
-   # Add those contents
+cd loco_manipulation_gym
+pip install -e .
 
-import os
-from legged_gym.envs.airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
-
-from legged_gym.envs.b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
-
-
-from legged_gym.utils.task_registry import task_registry
-
-from .airbot.airbot_robot import Airbot
-from .b2w.b2w_robot import B2w
-
-
-from .airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
-from .b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
-
-task_registry.register( "b2w", B2w, B2wRoughCfg(), B2wRoughCfgPPO() )
-task_registry.register( "airbot", Airbot, AirbotRoughCfg(), AirbotRoughCfgPPO() )
-```
-
-2. Copy envs files into legged_gym/envs corresponding.
-
-```
-   # Add those files
-cp path/to/legged-robots-manipulation/legged_gym/envs path/to/legged_gym/legged_gym/envs
 ```
 
 

@@ -186,7 +186,7 @@ class AirbotRoughCfgPPO( LeggedRobotCfgPPO ):
         experiment_name = 'airbot_0'
         resume = False
         num_steps_per_env = 24 # per iteration
-        max_iterations = 1000
+        max_iterations = 3000
         save_interval =100
         load_run = -1
         checkpoint = -1
@@ -194,6 +194,6 @@ class AirbotRoughCfgPPO( LeggedRobotCfgPPO ):
 
     class policy:
         init_noise_std = 1.0
-        actor_hidden_dims = [512, 256, 128]
-        critic_hidden_dims = [512, 256, 128]
+        actor_hidden_dims = [128, 128, 128]
+        critic_hidden_dims = [128, 128, 128]
         activation = 'elu'   # can be elu, relu, selu, crelu, lrelu, tanh, sigmoid

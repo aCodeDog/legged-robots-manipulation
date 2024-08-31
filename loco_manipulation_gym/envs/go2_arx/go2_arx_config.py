@@ -140,11 +140,11 @@ class Go2ArxRoughCfg( LeggedRobotCfg ):
 
     class rewards( LeggedRobotCfg.rewards ):
         class scales( LeggedRobotCfg.rewards.scales ):
-            termination = -0.0
+            termination = -1
             tracking_lin_vel = 2.0
             tracking_ang_vel = 0.5
             lin_vel_z = -0.0
-            ang_vel_xy = -0.0
+            ang_vel_xy = -0.1
             orientation = -0.5
             torques = -0.0002
             dof_vel = -0.
@@ -153,7 +153,7 @@ class Go2ArxRoughCfg( LeggedRobotCfg ):
             feet_air_time =  1.0
             collision = -1.
             feet_stumble = -0.0 
-            action_rate = -0.01
+            action_rate = -0.001
             stand_still = -0.
             dof_pos_limits =-10.
             object_distance = 2.
@@ -194,6 +194,6 @@ class Go2ArxRoughCfgPPO( LeggedRobotCfgPPO ):
         save_interval = 50 # check for potential saves every this many iterations
 
         resume = False
-        load_run = "/home/zifanw/rl_robot/pure_legged_gym/legged_gym/logs/go2_arx/Aug14_23-28-22_" # -1 = last run
+        load_run = -1 # -1 = last run
         checkpoint = 6000 # -1 = last saved model
         resume_path = None # updated from load_run and chkpt

@@ -361,15 +361,15 @@ class Go2ArxRobot(LeggedRobot):
 
         actions_scaled = actions * self.cfg.control.action_scale
         control_type = self.cfg.control.control_type
-        self.dof_vel[self.arm_indices] = 0
-        
+        modify_dof_vel = self.dof_vel.clone().detach()
+        modify_dof_vel[:,self.arm_indices] = 0
         if control_type=="P":
             if not self.cfg.domain_rand.randomize_motor:  # TODO add strength to gain directly
-                torques = self.p_gains*(actions_scaled - self.dof_err) - self.d_gains*self.dof_vel
+                torques = self.p_gains*(actions_scaled - self.dof_err) - self.d_gains*modify_dof_vel
             else:
-                torques = self.motor_strength[0] * self.p_gains*(actions_scaled - self.dof_err) - self.motor_strength[1] * self.d_gains*self.dof_vel
+                torques = self.motor_strength[0] * self.p_gains*(actions_scaled - self.dof_err) - self.motor_strength[1] * self.d_gains*modify_dof_vel
         elif control_type=="V":
-            torques = self.p_gains*(actions_scaled - self.dof_vel) - self.d_gains*(self.dof_vel - self.last_dof_vel)/self.sim_params.dt
+            torques = self.p_gains*(actions_scaled - modify_dof_vel) - self.d_gains*(modify_dof_vel - self.last_dof_vel)/self.sim_params.dt
         elif control_type=="T":
             torques = actions_scaled
         else:

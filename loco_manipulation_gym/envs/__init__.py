@@ -39,23 +39,25 @@ from loco_manipulation_gym.envs.go2_human.go2_human_robot import Go2HumanRobot
 from loco_manipulation_gym.envs.go2_arx.go2_arx_config import Go2ArxRoughCfg, Go2ArxRoughCfgPPO
 from loco_manipulation_gym.envs.go2_arx.go2_arx_robot import Go2ArxRobot
 
+from loco_manipulation_gym.envs.b2w_z1.b2w_z1_config import B2WZ1RoughCfg, B2WZ1RoughCfgPPO
+from loco_manipulation_gym.envs.b2w_z1.b2w_z1_robot import B2WZ1Robot
+
 
 import os
 
 from loco_manipulation_gym.utils.task_registry import task_registry
-
-
-task_registry.register( "go2_human", Go2HumanRobot, Go2HumanRoughCfg(), Go2HumanRoughCfgPPO())
-task_registry.register( "go2_arx", Go2ArxRobot, Go2ArxRoughCfg(), Go2ArxRoughCfgPPO())
-
-
-
-
 from loco_manipulation_gym.envs.airbot.airbot_robot import Airbot
 from loco_manipulation_gym.envs.b2w.b2w_robot import B2w
 
 from loco_manipulation_gym.envs.airbot.airbot_config import AirbotRoughCfg, AirbotRoughCfgPPO
 from loco_manipulation_gym.envs.b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
+
+
+task_registry.register( "go2_human", Go2HumanRobot, Go2HumanRoughCfg(), Go2HumanRoughCfgPPO())
+task_registry.register( "go2_arx", Go2ArxRobot, Go2ArxRoughCfg(), Go2ArxRoughCfgPPO())
+
+task_registry.register( "b2w_z1", B2WZ1Robot, B2WZ1RoughCfg(), B2WZ1RoughCfgPPO())
+
 
 
 

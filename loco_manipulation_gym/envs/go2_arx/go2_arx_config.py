@@ -146,7 +146,7 @@ class Go2ArxRoughCfg( LeggedRobotCfg ):
             lin_vel_z = -0.0
             ang_vel_xy = -0.1
             orientation = -0.5
-            torques = -0.0002
+            torques = -0.0001
             dof_vel = -0.
             dof_acc = -2.5e-9
             base_height = -0.2

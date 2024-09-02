@@ -2,7 +2,7 @@
 ## Introduction
 legged-robots-manipulation is a loco-manipulation repository for (wheel-)legged robots. The code is built on  [legged_gym](https://github.com/leggedrobotics/legged_gym/tree/master). 
 
-*Project Page*:[wheel-legged-loco-manipulation](https://acodedog.github.io/wheel-legged-loco-manipulation/)
+*Project Page*:[wheel-legged-loco-manipulation](https://acodedog.github.io/wheel-legged-loco-manipulation/) (IROS Oral 2024)
 
 The current repository contains airbot ,go2_arx,b2w_z1,aliengo_z1 and b2w. The current repository is a partial implementation of the paper.The repository is still under construction for various reasons, and will be releasing issac lab versions and vision-based versions in the near future.
 

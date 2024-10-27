@@ -70,7 +70,7 @@ If you use this work, please cite [this paper](https://arxiv.org/abs/2403.16535)
   }
 ```
 # IEEE concur reimbursement process reference:
-  [IEEE_concur_reimbursement_process.pd](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/ref/IEEE_concur_reimbursement_process.pdf)
+  [IEEE_concur_reimbursement_process.pdf](https://github.com/aCodeDog/legged-robots-manipulation/blob/master/loco_manipulation_gym/resources/ref/IEEE_concur_reimbursement_process.pdf)
 # Acknowledgements
 This code builds upon following open-source code-bases. Please visit the URLs to see the respective LICENSES:
 

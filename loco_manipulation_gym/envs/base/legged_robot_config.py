@@ -95,10 +95,13 @@ class LeggedRobotCfg(BaseConfig):
         action_scale = 0.5
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
+        wheel_speed = 1
+        arm_pos = 0
 
     class asset:
         file = ""
         name = "legged_robot"  # actor name
+        arm_name = ""
         foot_name = "None" # name of the feet bodies, used to index body state and contact force tensors
         penalize_contacts_on = []
         terminate_after_contacts_on = []

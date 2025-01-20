@@ -53,6 +53,9 @@ from loco_manipulation_gym.envs.airbot.airbot_config import AirbotRoughCfg, Airb
 from loco_manipulation_gym.envs.b2w.b2w_config import B2wRoughCfg, B2wRoughCfgPPO
 
 
+from loco_manipulation_gym.envs.go2w.go2w_robot import Go2w
+from loco_manipulation_gym.envs.go2w.go2w_config import Go2wRoughCfg, Go2wRoughCfgPPO
+
 task_registry.register( "go2_human", Go2HumanRobot, Go2HumanRoughCfg(), Go2HumanRoughCfgPPO())
 task_registry.register( "go2_arx", Go2ArxRobot, Go2ArxRoughCfg(), Go2ArxRoughCfgPPO())
 
@@ -62,4 +65,7 @@ task_registry.register( "b2w_z1", B2WZ1Robot, B2WZ1RoughCfg(), B2WZ1RoughCfgPPO(
 
 
 task_registry.register( "b2w", B2w, B2wRoughCfg(), B2wRoughCfgPPO() )
+task_registry.register( "go2w", B2w, Go2wRoughCfg(), Go2wRoughCfgPPO() )
+
+
 task_registry.register( "airbot", Airbot, AirbotRoughCfg(), AirbotRoughCfgPPO() )

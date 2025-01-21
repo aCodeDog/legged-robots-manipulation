@@ -250,7 +250,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf.stl" />
+          filename="../dae/calf.dae" />
       </geometry>
       <material
         name="">
@@ -555,7 +555,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf_mirror.stl" />
+          filename="../dae/calf_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -860,7 +860,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf.stl" />
+          filename="../dae/calf.dae" />
       </geometry>
       <material
         name="">
@@ -1166,7 +1166,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf_mirror.stl" />
+          filename="../dae/calf_mirror.dae" />
       </geometry>
       <material
         name="">

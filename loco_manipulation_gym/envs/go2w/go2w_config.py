@@ -34,7 +34,7 @@ class Go2wRoughCfg( LeggedRobotCfg ):
     class env(LeggedRobotCfg.env):
         num_envs = 6000
         num_actions = 16
-        num_observations = 77 #+ 187
+        num_observations = 77 + 187
     class commands( LeggedRobotCfg ):
         curriculum = True
         max_curriculum = 1.5
@@ -43,11 +43,11 @@ class Go2wRoughCfg( LeggedRobotCfg ):
         heading_command = False # if true: compute ang vel command from heading error
         class ranges:
             lin_vel_x = [-1.5, 1.5] # min max [m/s]
-            lin_vel_y = [-1.5, 1.5]   # min max [m/s]
-            ang_vel_yaw = [-1, 1]    # min max [rad/s]
+            lin_vel_y = [-0, 0]   # min max [m/s]
+            ang_vel_yaw = [-0, 0]    # min max [rad/s]
             heading = [-3.14, 3.14]
     class terrain(LeggedRobotCfg.terrain):
-        mesh_type = 'plane' # "heightfield" # none, plane, heightfield or trimesh
+        mesh_type = 'trimesh' # "heightfield" # none, plane, heightfield or trimesh
         horizontal_scale = 0.1 # [m]
         vertical_scale = 0.005 # [m]
         border_size = 25 # [m]
@@ -57,7 +57,6 @@ class Go2wRoughCfg( LeggedRobotCfg ):
         restitution = 0.
         # rough terrain only:
         measure_heights = True
-        measure_heights = False
         measured_points_x = [-0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8] # 1mx1.6m rectangle (without center line)
         measured_points_y = [-0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5]
         selected = False # select a unique terrain type and pass all arguments
@@ -68,7 +67,7 @@ class Go2wRoughCfg( LeggedRobotCfg ):
         num_rows= 10 # number of terrain rows (levels)
         num_cols = 20 # number of terrain cols (types)
         # terrain types: [smooth slope, rough slope, stairs up, stairs down, discrete]
-        terrain_proportions = [0.1, 0.1, 0.35, 0.25, 0.2]
+        terrain_proportions = [0.2, 0.2, 0.2, 0.2, 0.2]
         # trimesh only:
         slope_treshold = 0.75 # slopes above this threshold will be corrected to vertical surfaces
    
@@ -124,14 +123,14 @@ class Go2wRoughCfg( LeggedRobotCfg ):
             tracking_ang_vel = 1.5
             lin_vel_z = -0.1
             ang_vel_xy = -0.05
-            orientation = -0.5
-            torques = -0.000001
-            dof_vel = 0
-            dof_acc = -1e-8
+            orientation = -2
+            torques = -0.0001
+            dof_vel = -1e-7
+            dof_acc = -1e-7
             base_height = -0.5
-            feet_air_time =  1
+            feet_air_time =  0
             collision = -0.1
-            feet_stumble = -0.
+            feet_stumble = -0.1
             action_rate = -0.0002
             stand_still = -0.01
             dof_pos_limits = -0.9
@@ -170,18 +169,19 @@ class Go2wRoughCfg( LeggedRobotCfg ):
         terminate_after_contacts_on = []
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter "base","calf","hip","thigh"
         replace_cylinder_with_capsule = False
+        flip_visual_attachments = True
 
 
 class Go2wRoughCfgPPO( LeggedRobotCfgPPO ):
     class algorithm( LeggedRobotCfgPPO.algorithm ):
-        entropy_coef = 0.01
+        entropy_coef = 0.003
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
         experiment_name = 'Go2w'
-        resume = True
+        resume = False
         num_steps_per_env = 48 # per iteration
         max_iterations = 3000
-        load_run = -1
-        checkpoint = -1
+        load_run = "/home/zifanw/rl_robot/legged-robots-manipulation/loco_manipulation_gym/logs/Go2w/Jan21_02-18-32_"
+        checkpoint =1550
 
   

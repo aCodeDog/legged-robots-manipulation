@@ -32,9 +32,9 @@ from loco_manipulation_gym.envs.base.legged_robot_config import LeggedRobotCfg, 
 
 class B2wRoughCfg( LeggedRobotCfg ):
     class env(LeggedRobotCfg.env):
-        num_envs = 6000
+        num_envs = 2048
         num_actions = 16
-        num_observations = 77 #+ 187
+        num_observations = 77 + 187
     class commands( LeggedRobotCfg ):
         curriculum = True
         max_curriculum = 1.5
@@ -42,12 +42,12 @@ class B2wRoughCfg( LeggedRobotCfg ):
         resampling_time = 10. # time before command are changed[s]
         heading_command = False # if true: compute ang vel command from heading error
         class ranges:
-            lin_vel_x = [-1.0, 1.0] # min max [m/s]
-            lin_vel_y = [0.0, 0.0]   # min max [m/s]
-            ang_vel_yaw = [-0, 0]    # min max [rad/s]
+            lin_vel_x = [-1.5, 1.5] # min max [m/s]
+            lin_vel_y = [-1.0, 1.0]   # min max [m/s]
+            ang_vel_yaw = [-1, 1]    # min max [rad/s]
             heading = [-3.14, 3.14]
     class terrain(LeggedRobotCfg.terrain):
-        mesh_type = 'plane' # "heightfield" # none, plane, heightfield or trimesh
+        mesh_type = 'trimesh' # "heightfield" # none, plane, heightfield or trimesh
         horizontal_scale = 0.1 # [m]
         vertical_scale = 0.005 # [m]
         border_size = 25 # [m]
@@ -57,7 +57,6 @@ class B2wRoughCfg( LeggedRobotCfg ):
         restitution = 0.
         # rough terrain only:
         measure_heights = True
-        measure_heights = False
         measured_points_x = [-0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8] # 1mx1.6m rectangle (without center line)
         measured_points_y = [-0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5]
         selected = False # select a unique terrain type and pass all arguments
@@ -123,14 +122,14 @@ class B2wRoughCfg( LeggedRobotCfg ):
             tracking_ang_vel = 1.5
             lin_vel_z = -0.1
             ang_vel_xy = -0.05
-            orientation = -0.5
-            torques = -0.000001
-            dof_vel = 0
-            dof_acc = -1e-8
+            orientation = -2
+            torques = -0.0001
+            dof_vel = -1e-7
+            dof_acc = -1e-7
             base_height = -0.5
-            feet_air_time =  1
+            feet_air_time =  0
             collision = -0.1
-            feet_stumble = -0.
+            feet_stumble = -0.1
             action_rate = -0.0002
             stand_still = -0.01
             dof_pos_limits = -0.9
@@ -145,36 +144,38 @@ class B2wRoughCfg( LeggedRobotCfg ):
         soft_dof_vel_limit = 0.9
         soft_torque_limit = 1.
         base_height_target = 0.34
-        max_contact_force = 100. # forces above this value are penalized
+        max_contact_force = 200. # forces above this value are penalized
 
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
         control_type = 'P'
-        stiffness = {'joint': 300.,"fixed":10}  # [N*m/rad]
-        damping = {'joint': 15,"fixed":5}     # [N*m*s/rad]
+        stiffness = {'hip_joint': 50.,'thigh_joint': 50.,'calf_joint': 50.,"foot_joint":20}  # [N*m/rad]
+        damping = {'hip_joint': 1,'thigh_joint': 1,'calf_joint': 1,"foot_joint":0.5}      # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
         action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
 
     class asset( LeggedRobotCfg.asset ):
-        file = '{LOCO_MANI_GYM_ROOT_DIR}/resources/robots/b2w/urdf/b2w_description.urdf'
-        name = "aliengo"
+        file = '{LOCO_MANI_GYM_ROOT_DIR}/resources/robots/b2w/urdf/b2w.urdf'
+        name = "B2w"
+        arm_name = ""
         foot_name = "foot"
         wheel_name =["foot"]
         penalize_contacts_on = ["thigh", "calf","base"]
         terminate_after_contacts_on = []
         self_collisions = 0 # 1 to disable, 0 to enable...bitwise filter "base","calf","hip","thigh"
         replace_cylinder_with_capsule = False
+        flip_visual_attachments = True
 
 
 class B2wRoughCfgPPO( LeggedRobotCfgPPO ):
     class algorithm( LeggedRobotCfgPPO.algorithm ):
-        entropy_coef = 0.01
+        entropy_coef = 0.003
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
         experiment_name = 'b2w'
-        resume = True
+        resume = False
         num_steps_per_env = 48 # per iteration
         max_iterations = 3000
         load_run = '/path/to/pretrained_model'

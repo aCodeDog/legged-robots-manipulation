@@ -60,15 +60,14 @@ python train.py --task=airbot  --rl_device=cuda:0
 If you use this work, please cite [this paper](https://arxiv.org/abs/2403.16535):
 
 ```text
-@INPROCEEDINGS{10802062,
+@inproceedings{wang2024arm,
+  title={Arm-Constrained Curriculum Learning for Loco-Manipulation of a Wheel-Legged Robot},
   author={Wang, Zifan and Jia, Yufei and Shi, Lu and Wang, Haoyu and Zhao, Haizhou and Li, Xueyang and Zhou, Jinni and Ma, Jun and Zhou, Guyue},
-  booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
-  title={Arm-Constrained Curriculum Learning for Loco-Manipulation of a Wheel-Legged Robot}, 
+  booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={10770--10776},
   year={2024},
-  volume={},
-  number={},
-  pages={10770-10776},
-  doi={10.1109/IROS58592.2024.10802062}}
+  organization={IEEE}
+}
 
 ```
 # IEEE concur reimbursement process reference:
